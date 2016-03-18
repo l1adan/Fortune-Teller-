@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Reflection; //required for restart method to work
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +12,7 @@ namespace Fortune_Teller
         static void Main(string[] args)
         {
             string tryAgain = "";
-            do
+            do // created do while loop - to run fortune teller program and ask user to play again or quit at the end.
             {
 
 
@@ -112,7 +112,7 @@ namespace Fortune_Teller
                 switch (favoriteColor)
                 {
                     case "red":
-                        transportation = " a pimmped out riding lawn moer ";
+                        transportation = " a pimmped out riding lawn moer "; 
                         break;
 
                     case "orange":
@@ -147,7 +147,8 @@ namespace Fortune_Teller
                 }
 
 
-                //MONEY IN DA BANK
+                //MONEY IN BANK
+                // compares indices of first and last name to letters with in the users birthMonth
                 char firstLetter = birthMonth[0];
                 char secondLetter = birthMonth[1];
                 char thirdLetter = birthMonth[2];
@@ -175,11 +176,11 @@ namespace Fortune_Teller
 
 
 
-
+                
                 Console.WriteLine("If you would like to try again, write \"yes\". If not, write \"no\" ");
                 tryAgain = Console.ReadLine();
             }
-            while (tryAgain == "yes");
+            while (tryAgain == "yes"); // end of do while
         }
 
 
@@ -198,13 +199,13 @@ namespace Fortune_Teller
 
 
         }
-        static void Restart(string Reply)
+        static void Restart(string Reply) // creating a restart method
         {
             if (Reply == "Restart")
             {
-                var fileName = Assembly.GetExecutingAssembly().Location;
-                System.Diagnostics.Process.Start(fileName);
-                Environment.Exit(0);
+                var fileName = Assembly.GetExecutingAssembly().Location;  //gets the document location of fortune teller file
+                System.Diagnostics.Process.Start(fileName);               // starts new fortune telling game
+                Environment.Exit(0);        
             }
         
     }
