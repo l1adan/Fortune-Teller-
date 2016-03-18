@@ -33,11 +33,26 @@ namespace Fortune_Teller
                 Restart(lastName);
 
                 //USER AGE
-                Console.WriteLine("Please state your current age:");
-                string usersAge = (Console.ReadLine());
-                Quit(usersAge);
-                Restart(usersAge);
-                int userAge = int.Parse(usersAge);
+                
+                int ageNum = 0;
+                //ensure user enters a valid number (not a string)
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine("Please enter your current age:");
+                        string usersAge = Console.ReadLine();
+                        Quit(usersAge);
+                        Restart(usersAge);
+                        ageNum = int.Parse(usersAge);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("That is not a valid answer!");
+                    }
+                }
+                while (ageNum == 0);
+               
 
                 //BIRTH MONTH
                 Console.WriteLine("Which month were you born?");
@@ -62,19 +77,33 @@ namespace Fortune_Teller
 
 
                 //SIBLINGS
-                Console.WriteLine("How many siblings do you have?");
-                string siblings = (Console.ReadLine());
-                Quit(siblings);
-                Restart(siblings);
-                int siblings1 = int.Parse(siblings);
+               
+                int siblingsNum = -1;
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine("How many siblings do you have?");
+                        string userSiblings = Console.ReadLine();
+                        Quit(userSiblings);
+                        Restart(userSiblings);
+                        siblingsNum = int.Parse(userSiblings);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("That is not a valid answer!");
+                    }
+                }
+                while (siblingsNum == -1);
+               
 
                 //RETIREMENT EVEN ODD
                 int retirement = 0;
-                if (userAge % 2 == 1)
+                if (ageNum % 2 == 1)
                 {
                     retirement = 1;
                 }
-                else if (userAge % 2 == 0)
+                else if (ageNum % 2 == 0)
                 {
                     retirement = 400;
                 }
@@ -83,7 +112,7 @@ namespace Fortune_Teller
 
                 string location = "";
 
-                switch (siblings1)
+                switch (siblingsNum)
                 {
                     case 0:
                         location = " in The Closet";
