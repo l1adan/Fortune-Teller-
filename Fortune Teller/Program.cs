@@ -12,16 +12,18 @@ namespace Fortune_Teller
         static void Main(string[] args)
         {
             string tryAgain = "";
-            do // created do while loop - to run fortune teller program and ask user to play again or quit at the end.
+            do // created do while loop - to run fortune teller program and ask user to play again or quit upon completing the app.
             {
+                Console.WriteLine("Greetings,");
+                Console.WriteLine("and welcome to Katherine and Scotts \"tell-all-ball\" of mystical fortunes~");
+                Console.WriteLine("You may quit by typing, \"Quit\" and Restart, by typing, \"Restart\"");
 
-
-                Console.WriteLine("Greetings user, and welcome to Katherine and Scott's \"tell-all-ball\" of mystical fortunes~");
-                Console.WriteLine("You can quit at any time by typing, \"Quit\" and can Restart at any time by typing, \"Restart\"");
+                Console.WriteLine();
 
                 //FIRST NAME
                 Console.WriteLine("Please enter your first name:");
                 string firstName = (Console.ReadLine());
+                Console.WriteLine();
                 Quit(firstName);
                 Restart(firstName);
 
@@ -29,6 +31,7 @@ namespace Fortune_Teller
                 //LAST NAME
                 Console.WriteLine("Ah yes, " + firstName + ", please enter your last name my child:");
                 string lastName = (Console.ReadLine());
+                Console.WriteLine();
                 Quit(lastName);
                 Restart(lastName);
 
@@ -42,6 +45,7 @@ namespace Fortune_Teller
                     {
                         Console.WriteLine("Please enter your current age:");
                         string usersAge = Console.ReadLine();
+                        Console.WriteLine();
                         Quit(usersAge);
                         Restart(usersAge);
                         ageNum = int.Parse(usersAge);
@@ -57,6 +61,7 @@ namespace Fortune_Teller
                 //BIRTH MONTH
                 Console.WriteLine("Which month were you born?");
                 string birthMonth = Console.ReadLine().ToLower();
+                Console.WriteLine();
                 Quit(birthMonth);
                 Restart(birthMonth);
 
@@ -83,6 +88,7 @@ namespace Fortune_Teller
                 {
                     try
                     {
+                        Console.WriteLine();
                         Console.WriteLine("How many siblings do you have?");
                         string userSiblings = Console.ReadLine();
                         Quit(userSiblings);
@@ -97,7 +103,7 @@ namespace Fortune_Teller
                 while (siblingsNum == -1);
                
 
-                //RETIREMENT EVEN ODD
+                //RETIREMENT EVEN / ODD
                 int retirement = 0;
                 if (ageNum % 2 == 1)
                 {
@@ -108,7 +114,7 @@ namespace Fortune_Teller
                     retirement = 400;
                 }
 
-                //VACATION JOINT
+                //VACATION LOCATION
 
                 string location = "";
 
