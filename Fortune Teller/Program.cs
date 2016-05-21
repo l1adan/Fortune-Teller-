@@ -11,9 +11,16 @@ namespace Fortune_Teller
     {
         static void Main(string[] args)
         {
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~( FORTUNE TELLER )~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("_______________________________________________________________");
+            Console.WriteLine();
             string tryAgain = "";
             do // created do while loop - to run fortune teller program and ask user to play again or quit upon completing the app.
-            {
+
+
+                {
+
                 Console.WriteLine("Greetings,");
                 Console.WriteLine("and welcome to Katherine and Scotts \"tell-all-ball\" of mystical fortunes~");
                 Console.WriteLine("You may quit by typing, \"Quit\" and Restart, by typing, \"Restart\"");
